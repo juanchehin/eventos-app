@@ -14,6 +14,16 @@ app.get('/', (req, res) => {
     return;
 });
 
+app.get('/evento', (req, res) => {
+    res.sendFile(__dirname + '/public/evento.html');
+    return;
+});
+
+app.get('/nuevo-evento', (req, res) => {
+    res.sendFile(__dirname + '/public/nuevo-evento.html');
+    return;
+});
+
 app.post('/login', (req, res) => {
     res.render('public/login');
     return;

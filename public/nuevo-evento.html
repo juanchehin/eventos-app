@@ -85,16 +85,26 @@
             <div class="album py-5 bg-light col-8">
                 <div class=" container ">
 
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 ">
-                        <h1>Event name</h1>
-                    </div>
-                    <p>Lorem Ipsum </p>
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="Nombre del evento">
+                            </div>
+                        </div>
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                            <label for="floatingTextarea2">Descripcion</label>
+                        </div>
+                    </form>
 
                 </div>
             </div>
 
             <div class="col-4 ">
-                <img src="https://www.masquenegocio.com/wp-content/uploads/2018/03/evento-concierto-874x492.jpg" class="rounded mx-auto d-block" width="300" height="300">
+                <div class="card" style="width: 18rem;margin-left: 60px;">
+                    <img src="./image/default.png" class="card-img-top" alt="...">
+                    <input type="file" id="img" name="img" accept="image/*">
+                </div>
                 <table class="table table-striped">
                     <thead>
                         <tr>
