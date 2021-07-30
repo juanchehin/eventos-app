@@ -1,19 +1,26 @@
 {
-  "name": "eventos-app",
-  "version": "1.0.0",
-  "description": "Este es un proyecto llamado 'event-app'",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/juanchehin/eventos-app.git"
-  },
-  "author": "Chehin Juan Martin",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/juanchehin/eventos-app/issues"
-  },
-  "homepage": "https://github.com/juanchehin/eventos-app#readme"
+    "name": "eventos-app",
+    "version": "1.0.0",
+    "description": "Este es un proyecto llamado 'event-app'",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/juanchehin/eventos-app.git"
+    },
+    "author": "Chehin Juan Martin",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/juanchehin/eventos-app/issues"
+    },
+    "homepage": "https://github.com/juanchehin/eventos-app#readme",
+    "dependencies": {
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "mysql2": "^2.2.5",
+        "nodemon": "^2.0.12"
+    }
 }
