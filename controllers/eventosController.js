@@ -1,9 +1,9 @@
 const mysql = require('mysql2');
 
-module.exports = listarEventos(() => {
+exports.listarEventos = (req, res, next) => {
     console.log('Entra listar eventos');
-});
+};
 
-module.exports = login(() => {
+module.exports = (req, res, next) => {
     console.log('Entra login');
-});
+};
