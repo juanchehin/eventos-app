@@ -1,0 +1,19 @@
+{
+  "name": "eventos-app",
+  "version": "1.0.0",
+  "description": "Este es un proyecto llamado 'event-app'",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanchehin/eventos-app.git"
+  },
+  "author": "Chehin Juan Martin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanchehin/eventos-app/issues"
+  },
+  "homepage": "https://github.com/juanchehin/eventos-app#readme"
+}
