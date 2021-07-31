@@ -4,6 +4,14 @@ exports.listarEventos = (req, res, next) => {
     console.log('Entra listar eventos');
 };
 
-module.exports = (req, res, next) => {
+exports.login = (req, res, next) => {
+    console.log('Entra login');
+};
+
+exports.crearEvento = (req, res, next) => {
+    console.log('Entra login');
+};
+
+exports.compartirTwitter = (req, res, next) => {
     console.log('Entra login');
 };
