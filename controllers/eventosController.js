@@ -13,12 +13,34 @@ exports.login = (req, res, next) => {
     console.log('Entra login');
 };
 
-exports.crearEvento = (req, res, next) => {
-    console.log('Entra login');
+exports.crearEvento = async(req, res, next) => {
+    const titulo = req.body.titulo;
+    const descripcion = req.body.descripcion;
+    const lista_fechas = req.body.lista_fechas;
+    const lugar = req.body.lugar;
+    const destacado = req.body.destacado;
+    const imagen = req.body.imagen;
+
+    try {
+        // Create a new evento
+        const respuesta = await eventos.create({
+            titulo: titulo,
+            descripcion: descripcion,
+            lista_fechas: lista_fechas,
+            lugar: lugar,
+            destacado: destacado,
+            imagen: imagen
+        });
+        res.json({ mensaje: 'ok' });
+    } catch {
+        res.json({ mensaje: 'algo salio mal' });
+
+    }
+
 };
 
 exports.compartirTwitter = (req, res, next) => {
-    console.log('Entra login');
+    console.log('Entra twit');
 };
 
 exports.db = db;

@@ -37,9 +37,9 @@ router.get('/',
 // );
 
 // Crear evento
-// router.post('/crear-evento',
-//     eventosController.crearEvento
-// );
+router.post('/crear-evento',
+    eventosController.crearEvento
+);
 
 // ======================================
 //  Twitter

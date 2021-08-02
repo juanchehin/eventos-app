@@ -27,7 +27,6 @@ app.use(passport.session());
 // app.use(flash());
 // ************* FIN PASSPORT *************
 
-console.log('llega');
 // Archivo de las rutas
 app.use('/', index);
 
