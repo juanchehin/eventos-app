@@ -39,8 +39,25 @@ exports.crearEvento = async(req, res, next) => {
 
 };
 
-exports.compartirTwitter = (req, res, next) => {
-    console.log('Entra twit');
+
+exports.detalleEvento = async(req, res) => {
+
+    const pIdEvento = req.params.IdEvento;
+
+    try {
+        const respuesta = await eventos.findAll({
+            where: {
+                IdEvento: pIdEvento
+            }
+        });
+        console.log('respues es : ', respuesta);
+        res.json(respuesta);
+    } catch {
+        res.json({ mensaje: 'Algo salio mal' });
+
+    }
+
 };
+
 
 exports.db = db;

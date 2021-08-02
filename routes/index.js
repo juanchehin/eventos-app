@@ -21,15 +21,15 @@ router.post('/login',
 //  Eventos
 // ======================================
 
-// Detalles del evento idevento
+// Listado de eventos
 router.get('/',
     eventosController.listarEventos
 );
 
 // Detalles del evento idevento
-// router.get('/evento/:IdEvento',
-//     authController.usuarioAutenticado,
-// );
+router.get('/evento/:IdEvento',
+    eventosController.detalleEvento
+);
 
 // Eventos destacados
 // router.get('/eventos-destacados',
@@ -45,8 +45,8 @@ router.post('/crear-evento',
 //  Twitter
 // ======================================
 
-// router.post('/twitter/newtweet',
-//     twitterController.publicar
-// );
+router.post('/twitter/newtweet',
+    twitterController.publicar
+);
 
 module.exports = router;
