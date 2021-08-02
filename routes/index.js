@@ -22,9 +22,9 @@ router.post('/login',
 // ======================================
 
 // Detalles del evento idevento
-// router.get('/eventos',
-//     eventosController.listarEventos
-// );
+router.get('/',
+    eventosController.listarEventos
+);
 
 // Detalles del evento idevento
 // router.get('/evento/:IdEvento',

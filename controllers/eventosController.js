@@ -5,6 +5,7 @@ const eventos = require('../models/eventos.js');
 exports.listarEventos = (req, res, next) => {
     eventos.findAll().then(eventos => {
         console.log("All events:", JSON.stringify(eventos, null, 4));
+        res.json(eventos);
     });
 };
 
