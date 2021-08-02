@@ -1,39 +1,39 @@
 const express = require('express');
 const app = express();
+const passport = require('./config/passport');
+const session = require('express-session');
+const index = require('./routes/index.js');
 
-const eventosController = require('./controllers/eventosController');
+// Crear la conexion a la BD
+const db = require('./config/database.js');
 
-// Indico el lugar de los archivos estaticos
-app.use(express.static('public'));
+db.sync()
+    .then(() => console.log('Conectado al Servidor MySQL'))
+    .catch(error => console.log(error));
 
-// app.engine('html', require('ejs').renderFile);
-// app.set('view engine', 'html');
+// Para usar el cuerpo de la peticion (body)
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/eventos.html');
-    return;
-});
+// ************* PASSPORT *************
+app.use(session({
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: false
+}));
 
-app.get('/evento', (req, res) => {
-    res.sendFile(__dirname + '/public/evento.html');
-    return;
-});
+app.use(passport.initialize());
+app.use(passport.session());
+// app.use(flash());
+// ************* FIN PASSPORT *************
 
-app.get('/nuevo-evento', (req, res) => {
-    res.sendFile(__dirname + '/public/nuevo-evento.html');
-    return;
-});
+// Archivo de las rutas
+app.use('/', index);
 
-app.post('/login', (req, res) => {
-    res.render('public/login');
-    return;
-});
+// Servidor y puerto
+const host = process.env.HOST || '0.0.0.0';
+const port = process.env.PORT || 3000;
 
-app.post('/', (req, res) => {
-    console.log('Aqui creas tu evento!');
-});
-
-
-app.listen((3000), () => {
-    console.log('Corriendo en puerto 3000');
+app.listen(port, '0.0.0.0', () => {
+    console.log('El servidor esta funcionando');
 });

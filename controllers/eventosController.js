@@ -1,7 +1,11 @@
-const mysql = require('mysql2');
+// Crear la conexion a la BD desde app..js
+const db = require('../config/database.js');
+const eventos = require('../models/eventos.js');
 
 exports.listarEventos = (req, res, next) => {
-    console.log('Entra listar eventos');
+    eventos.findAll().then(eventos => {
+        console.log("All events:", JSON.stringify(eventos, null, 4));
+    });
 };
 
 exports.login = (req, res, next) => {
@@ -15,3 +19,5 @@ exports.crearEvento = (req, res, next) => {
 exports.compartirTwitter = (req, res, next) => {
     console.log('Entra login');
 };
+
+exports.db = db;
