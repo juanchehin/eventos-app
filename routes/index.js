@@ -32,9 +32,9 @@ router.get('/evento/:IdEvento',
 );
 
 // Eventos destacados
-// router.get('/eventos-destacados',
-//     eventosController.eventosDestacados
-// );
+router.get('/eventos-destacados',
+    eventosController.eventosDestacados
+);
 
 // Crear evento
 router.post('/crear-evento',

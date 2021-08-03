@@ -1,4 +1,3 @@
-// Crear la conexion a la BD desde app..js
 const db = require('../config/database.js');
 const eventos = require('../models/eventos.js');
 
@@ -50,7 +49,23 @@ exports.detalleEvento = async(req, res) => {
                 IdEvento: pIdEvento
             }
         });
-        console.log('respues es : ', respuesta);
+        res.json(respuesta);
+    } catch {
+        res.json({ mensaje: 'Algo salio mal' });
+
+    }
+
+};
+
+
+exports.eventosDestacados = async(req, res) => {
+
+    try {
+        const respuesta = await eventos.findAll({
+            where: {
+                destacado: true
+            }
+        });
         res.json(respuesta);
     } catch {
         res.json({ mensaje: 'Algo salio mal' });
